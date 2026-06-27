@@ -14,18 +14,23 @@ param = {
 }
 
 r = requests.get(f"{base_url}/", params=param)
-#print(r.url)
+# print(r.url)
 index = random.randint(0, 10)
 data = r.json()
 image = data['data'][index]['path']
+# print(image)
 image_get = requests.get(image)
 image_name = f"url_{index}.jpg"
 with open(f"/home/x-xenon/Desktop/Wallpaper/{image_name}", 'wb') as f:
-    f.write(image_get.content)
+     f.write(image_get.content)
  
 
 
-# p1 = subprocess.run(['gsettings get org.cinnamon.desktop.background picture-uri'
-# ], shell=True, capture_output=True, text=True)
+p1 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', f"'file:///home/x-xenon/Desktop/Wallpaper/{image_name}'"], capture_output=True, text=True)
 
+if p1.returncode == 0:
+    print('Done')
+else:
+    print("You got problem")
 
+print(p1.stderr)
