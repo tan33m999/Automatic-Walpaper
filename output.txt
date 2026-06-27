@@ -1,6 +1,0 @@
-total 16
-drwxrwxr-x  4 x-xenon x-xenon 4096 Jun 27 17:38 .
-drwxr-x--- 29 x-xenon x-xenon 4096 Jun 27 16:50 ..
-drwxrwxr-x  8 x-xenon x-xenon 4096 Jun 27 17:20 .git
--rw-rw-r--  1 x-xenon x-xenon    0 Jun 27 17:38 output.txt
-drwxrwxr-x  2 x-xenon x-xenon 4096 Jun 27 17:20 prac_scrap
