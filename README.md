@@ -13,7 +13,9 @@ A python script to automatically change Desktop wallpaper on **Linux** only
 - Python
 
 # Instruction
-- Run the script
+- Open the script
+- Add your own wallhaven api key [you can get it by loging in wallhaven]
+- Save and Run the script
 - Enter your keyword or just hit 'Enter' 
 - Wait for a few seconds
 - Done. Your wallpaper is set
