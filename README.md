@@ -20,3 +20,6 @@ A python script to automatically change Desktop wallpaper on **Linux** only
 - Wait for a few seconds
 - Done. Your wallpaper is set
 
+# Aditional Tips
+- Create a launcher for quick access
+- add this command - 'python3 /your/script/path/Wallpaper.py'
