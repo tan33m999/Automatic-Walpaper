@@ -15,6 +15,38 @@ param = {
     'resolutions': '1920x1080',
     #'colors': '000000,ff6600,993399,66cccc,660000,424153,663300'
 }
+q_list = [
+    "anime+cyberpunk",
+    "anime+sci-fi",
+    "mecha",
+    "gundam",
+    "futuristic+anime",
+    "3D",
+    "CGI",
+    "blender",
+    "unreal engine",
+    "digital art",
+    "concept art",
+    "fantasy art",
+    "futuristic+city",
+    "space+art",
+    "spaceship",
+    "scifi+landscape",
+    "neon+aesthetic",
+    "synthwave",
+    "anime+girl+sci-fi",
+    "cyborg+girl",
+    "android",
+    "mecha+musume"
+]
+
+for i <= 3:
+    i += 1
+    
+
+# value = 
+# param['q'].append[value]
+# # set param value
 
 
 r = requests.get(f"{base_url}/", params=param)
@@ -26,29 +58,29 @@ last_page = meta['last_page']
 if last_page == 0:
     pass
 else:
-    param['page'] = random.randint(1, last_page)
+    param['page'] = random.randint(1, last_page)            # checking pages
 
 
-r = requests.get(f"{base_url}/", params=param)
-print(data)
+r = requests.get(f"{base_url}/", params=param)  #updated the params
+# print(data)
 total = len(data['data'])
 if total == 1:
-    index = total
+    index = total-1
 elif total == 0:
     pass
 else:
-    index = random.randint(1, total)
+    index = random.randint(1, total)        #fixing index
 
 
 image = data['data'][index]['path']         # getting path from the api response
 image_get = requests.get(image)
 image_name = f"{data['data'][index]['id']}_{index}.jpg"
-with open(f"/home/x-xenon/Desktop/Wallpaper/{image_name}", 'wb') as f:
+with open(f"/home/x-xenon/Desktop/Wallpaper/{image_name}", 'wb') as f:      #writing file
     f.write(image_get.content)
 
 
 
-p1 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', f"'file:///home/x-xenon/Desktop/Wallpaper/{image_name}'"], capture_output=True, text=True)
+p1 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', f"'file:///home/x-xenon/Desktop/Wallpaper/{image_name}'"], capture_output=True, text=True) #command set and execute
 
 if p1.returncode == 0:
     print(f"Done.{image_name} is set as your wallpaper")
