@@ -4,12 +4,11 @@ import random
 import subprocess
 
 base_url = 'https://wallhaven.cc/api/v1/search'   #if you don't have a api key
-# base_url = f"https://wallhaven.cc/api/v1/search?apikey=<{Api_key}>"    # if you have api key
 q_input = input('Search a tag like anime, cgi etc or just press "Enter": ')
 
 if q_input == '':
     param = {
-    'apikey': 'qSTxQe3509ZwHsLoLnEYoTIxnfy0Bc3w',
+    'apikey': 'Your API key',
     #'q': q_input,                  # add search tag here like anime. sci-fi etc
     'categories': '111',
     'purity': '111',
