@@ -8,7 +8,7 @@ q_input = input('Search a tag like anime, cgi etc or just press "Enter": ')
 
 if q_input == '':
     param = {
-    'apikey': 'Your API key',
+    'apikey': 'qSTxQe3509ZwHsLoLnEYoTIxnfy0Bc3w',
     #'q': q_input,                  # add search tag here like anime. sci-fi etc
     'categories': '111',
     'purity': '111',
@@ -82,4 +82,4 @@ try:
 except:
     print(f"There are only {total} Wallpaper/s")
 
-print(p1.stderr)
+#print(p1.stderr)
