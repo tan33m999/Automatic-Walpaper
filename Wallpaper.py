@@ -71,7 +71,9 @@ try:
     os.symlink(actual_path, shortcut_path)
 
 
-    p1 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', shortcut_path], capture_output=True, text=True) #command set and execute
+
+    p1 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', f'file://{actual_path}'], capture_output=True, text=True) #command set and execute
+    p2 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', f'file://{shortcut_path}'], capture_output=True, text=True) #command create a shortcut path
 
     if p1.returncode == 0:
         print(f"Done.{image_name} is set as your wallpaper")
@@ -80,4 +82,4 @@ try:
 except:
     print(f"There are only {total} Wallpaper/s")
 
-# print(p1.stderr)
+print(p1.stderr)
