@@ -60,9 +60,18 @@ try:
     with open(f"/home/x-xenon/Desktop/Wallpaper/{image_name}", 'wb') as f:      #writing file
         f.write(image_get.content)
 
+    actual_path = f"/home/x-xenon/Desktop/Wallpaper/{image_name}"
+    shortcut_path = "/home/x-xenon/Desktop/Wallpaper/current_wall.jpg"
+
+    if os.path.exists(shortcut_path):
+        os.remove(shortcut_path)
+    else:
+        pass
+    
+    os.symlink(actual_path, shortcut_path)
 
 
-    p1 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', f"'file:///home/x-xenon/Desktop/Wallpaper/{image_name}'"], capture_output=True, text=True) #command set and execute
+    p1 = subprocess.run(['gsettings', 'set', 'org.cinnamon.desktop.background', 'picture-uri', shortcut_path], capture_output=True, text=True) #command set and execute
 
     if p1.returncode == 0:
         print(f"Done.{image_name} is set as your wallpaper")
