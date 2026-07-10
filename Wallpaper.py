@@ -12,7 +12,7 @@ if q_input == '':
     #'q': q_input,                  # add search tag here like anime. sci-fi etc
     'categories': '111',
     'purity': '111',
-    'sorting': 'toplist',
+    'sorting': 'random',
     'resolutions': '1920x1080',
     #'colors': '000000,ff6600,993399,66cccc,660000,424153,663300'
 }
@@ -22,7 +22,7 @@ else:
     'q': q_input,                  # add search tag here like anime. sci-fi etc
     'categories': '110',
     'purity': '111',
-    'sorting': 'toplist',
+    'sorting': 'random',
     'resolutions': '1920x1080',
     #'colors': '000000,ff6600,993399,66cccc,660000,424153,663300'
 }
